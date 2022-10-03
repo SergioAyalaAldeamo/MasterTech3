@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.entities.Producto;
 import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class ProductController {
     }
 
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Producto save(@RequestBody Producto p){
         return productService.save(p);
     }
