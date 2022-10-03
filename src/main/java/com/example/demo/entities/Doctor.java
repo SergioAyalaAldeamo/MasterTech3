@@ -14,7 +14,7 @@ public class Doctor implements Serializable {
     private Integer id;
     private String specialty;
     private Integer year;
-    private Integer name;
+    private String name;
     private String description;
     private String department;
 
@@ -55,11 +55,11 @@ public class Doctor implements Serializable {
         this.year = year;
     }
 
-    public Integer getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(Integer name) {
+    public void setName(String name) {
         this.name = name;
     }
 
