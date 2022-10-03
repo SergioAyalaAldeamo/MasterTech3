@@ -11,31 +11,40 @@ public class Doctor implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idDoctor;
-    private String especialidad;
+    private Integer id;
+    private String specialty;
     private Integer year;
     private Integer name;
     private String description;
+    private String department;
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
 
     @ManyToOne
     @JoinColumn(name = "speciality")
     @JsonIgnoreProperties("doctor")
     private Speciality speciality;
 
-    public Integer getIdDoctor() {
-        return idDoctor;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdDoctor(Integer idDoctor) {
-        this.idDoctor = idDoctor;
+    public void setId(Integer idDoctor) {
+        this.id = idDoctor;
     }
 
-    public String getEspecialidad() {
-        return especialidad;
+    public String getSpecialty() {
+        return specialty;
     }
 
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
+    public void setSpecialty(String especialidad) {
+        this.specialty = especialidad;
     }
 
     public Integer getYear() {
