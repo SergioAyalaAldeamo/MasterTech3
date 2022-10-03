@@ -39,6 +39,14 @@ public class Doctor implements Serializable {
         this.id = idDoctor;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getSpecialty() {
         return specialty;
     }
@@ -55,13 +63,6 @@ public class Doctor implements Serializable {
         this.year = year;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getDescription() {
         return description;
