@@ -20,7 +20,7 @@ public class DoctorController {
         return doctorService.getAll();
     }
 
-    @PostMapping("/save")
+    @PostMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public Doctor save(@RequestBody Doctor p){
         return doctorService.save(p);
