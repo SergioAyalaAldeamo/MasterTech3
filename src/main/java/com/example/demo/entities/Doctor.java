@@ -33,7 +33,6 @@ public class Doctor implements Serializable {
     @JsonIgnoreProperties("reservations")
     private List<Reservation> reservations;
 
-
     public Integer getId() {
         return id;
     }
