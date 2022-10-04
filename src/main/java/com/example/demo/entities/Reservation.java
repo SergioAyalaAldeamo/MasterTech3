@@ -15,16 +15,19 @@ public class Reservation implements Serializable {
     private Date startDate;
     private Date devolutionDate;
 
+    private String status = "created";
+
     @ManyToOne
     @JoinColumn(name = "doctor")
-    @JsonIgnoreProperties("reservations")
+    @JsonIgnoreProperties({"reservations"})
     private Doctor doctor;
 
     @ManyToOne
     @JoinColumn(name = "client")
-    @JsonIgnoreProperties("reservations")
+    @JsonIgnoreProperties({"reservations", "messages"})
     private Client client;
 
+    private String scoere
     public Integer getIdReservation() {
         return idReservation;
     }
@@ -63,5 +66,13 @@ public class Reservation implements Serializable {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = "created";
     }
 }
