@@ -13,10 +13,11 @@ public class Doctor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer year;
     private String name;
-    private String description;
     private String department;
+    private Integer year;
+    private String description;
+
 
     @ManyToOne
     @JoinColumn(name = "speciality")
