@@ -1,10 +1,9 @@
 package com.example.demo.repository.crudRepository;
 
-
-import com.example.demo.entities.Speciality;
+import com.example.demo.entities.Client;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SpecialityCrudRepository extends CrudRepository<Speciality, Integer> {
+public interface ClientCrudRepository extends CrudRepository<Client, Integer> {
 }

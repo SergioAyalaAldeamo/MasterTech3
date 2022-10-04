@@ -1,7 +1,7 @@
 package com.example.demo.repository;
 
-import com.example.demo.entities.Speciality;
-import com.example.demo.repository.crudRepository.SpecialityCrudRepository;
+import com.example.demo.entities.Specialty;
+import com.example.demo.repository.crudRepository.SpecialtyCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -12,20 +12,20 @@ import java.util.Optional;
 public class SpecialtyRepository {
 
     @Autowired
-    private SpecialityCrudRepository specialityCrudRepository;
+    private SpecialtyCrudRepository specialityCrudRepository;
 
-    public List<Speciality> getall(){
-        return (List<Speciality>) specialityCrudRepository.findAll();
+    public List<Specialty> getall(){
+        return (List<Specialty>) specialityCrudRepository.findAll();
     }
 
-    public Optional<Speciality> getCategory(int id){
+    public Optional<Specialty> getSpeciality(int id){
         return specialityCrudRepository.findById(id);
     }
 
-    public Speciality save(Speciality c){
+    public Specialty save(Specialty c){
         return specialityCrudRepository.save(c);
     }
-    public void delete(Speciality c){
+    public void delete(Specialty c){
         specialityCrudRepository.delete(c);
     }
 

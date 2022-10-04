@@ -1,7 +1,8 @@
 package com.example.demo.controller;
 
+import com.example.demo.entities.Client;
 import com.example.demo.entities.Doctor;
-import com.example.demo.service.DoctorService;
+import com.example.demo.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -9,20 +10,20 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/doctor")
-public class DoctorController {
+@RequestMapping("/api/client")
+public class ClientController {
 
     @Autowired
-    private DoctorService doctorService;
+    private ClientService clientService;
 
     @GetMapping("/all")
-    public List<Doctor> getAll(){
-        return doctorService.getAll();
+    public List<Client> getAll(){
+        return clientService.getAll();
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Doctor save(@RequestBody Doctor p){
-        return doctorService.save(p);
+    public Client save(@RequestBody Client p){
+        return clientService.save(p);
     }
 }

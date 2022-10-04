@@ -4,55 +4,42 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
-@Table(name = "doctor")
+@Table(name = "Doctor")
 public class Doctor implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String specialty;
     private Integer year;
     private String name;
     private String description;
     private String department;
 
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
     @ManyToOne
     @JoinColumn(name = "speciality")
-    @JsonIgnoreProperties("doctor")
-    private Speciality speciality;
+    @JsonIgnoreProperties("doctors")
+    private Specialty specialty;
+
+
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "doctor")
+    @JsonIgnoreProperties("messages")
+    private List<Message> messages;
+
+
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "doctor")
+    @JsonIgnoreProperties("reservations")
+    private List<Reservation> reservations;
+
 
     public Integer getId() {
         return id;
     }
 
-    public void setId(Integer idDoctor) {
-        this.id = idDoctor;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSpecialty() {
-        return specialty;
-    }
-
-    public void setSpecialty(String especialidad) {
-        this.specialty = especialidad;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getYear() {
@@ -63,6 +50,13 @@ public class Doctor implements Serializable {
         this.year = year;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getDescription() {
         return description;
@@ -72,11 +66,35 @@ public class Doctor implements Serializable {
         this.description = description;
     }
 
-    public Speciality getSpeciality() {
-        return speciality;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setSpeciality(Speciality speciality) {
-        this.speciality = speciality;
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public Specialty getSpecialty() {
+        return specialty;
+    }
+
+    public void setSpecialty(Specialty specialty) {
+        this.specialty = specialty;
+    }
+
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }

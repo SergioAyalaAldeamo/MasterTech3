@@ -18,7 +18,7 @@ public class DoctorRepository {
         return (List<Doctor>) doctorCrudRepository.findAll();
     }
 
-    public Optional<Doctor> getProducto(int id){
+    public Optional<Doctor> getDoctor(int id){
         return doctorCrudRepository.findById(id);
     }
 

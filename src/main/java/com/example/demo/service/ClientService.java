@@ -1,7 +1,8 @@
 package com.example.demo.service;
 
+import com.example.demo.entities.Client;
 import com.example.demo.entities.Doctor;
-import com.example.demo.repository.DoctorRepository;
+import com.example.demo.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,35 +10,35 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DoctorService {
+public class ClientService {
 
     @Autowired
-    private DoctorRepository doctorRepository;
+    private ClientRepository clientRepository;
 
-    public List<Doctor> getAll(){
-        return doctorRepository.getall();
+    public List<Client> getAll(){
+        return clientRepository.getall();
     }
 
-    public Optional<Doctor> getDoctor(int id){
-        return doctorRepository.getDoctor(id);
+    public Optional<Client> getClient(int id){
+        return clientRepository.getClient(id);
     }
 
-    public Doctor save(Doctor p){
-        if(p.getId() == null){
-            return doctorRepository.save(p);
+    public Client save(Client p){
+        if(p.getIdClient() == null){
+            return clientRepository.save(p);
         }else{
-            Optional<Doctor> e = doctorRepository.getDoctor(p.getId());
+            Optional<Client> e = clientRepository.getClient(p.getIdClient());
             if(e.isPresent()){
                 return e.get();
             }else{
-                return doctorRepository.save(p);
+                return clientRepository.save(p);
             }
         }
 
     }
-    public Doctor update(Doctor p) {
-        if (p.getId() != null) {
-            Optional<Doctor> q = doctorRepository.getDoctor(p.getId());
+    /*public Client update(Client p) {
+        if (p.getIdClient() != null) {
+            Optional<Client> q = clientRepository.getClient(p.getIdClient());
             if (q.isPresent()) {
                 if (p.getName() != null){
                     q.get().setName(p.getName());
@@ -54,7 +55,7 @@ public class DoctorService {
                 if (p.getDepartment() != null){
                     q.get().setDepartment(p.getDepartment());
                 }
-                doctorRepository.save(q.get());
+                clientRepository.save(q.get());
                 return q.get();
             } else {
                 return p;
@@ -62,13 +63,13 @@ public class DoctorService {
         }else{
             return p;
         }
-    }
+    }*/
 
     public boolean detele(int id){
         boolean flag=false;
-        Optional<Doctor> p = doctorRepository.getDoctor(id);
+        Optional<Client> p = clientRepository.getClient(id);
         if (p.isPresent()){
-            doctorRepository.delete(p.get());
+            clientRepository.delete(p.get());
             flag=true;
         }
         return flag;

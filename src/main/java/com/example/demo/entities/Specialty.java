@@ -7,8 +7,8 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "speciality")
-public class Speciality implements Serializable {
+@Table(name = "Specialty")
+public class Specialty implements Serializable {
 
     @Id
     @GeneratedValue
@@ -16,9 +16,17 @@ public class Speciality implements Serializable {
     private String name;
     private String description;
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "speciality")
-    @JsonIgnoreProperties("doctor")
-    private List<Doctor> doctor;
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "specialty")
+    @JsonIgnoreProperties("doctors")
+    private List<Doctor> doctors;
+
+    public List<Doctor> getDoctors() {
+        return doctors;
+    }
+
+    public void setDoctors(List<Doctor> doctors) {
+        this.doctors = doctors;
+    }
 
     public Integer getId() {
         return id;
@@ -44,11 +52,5 @@ public class Speciality implements Serializable {
         this.description = description;
     }
 
-    public List<Doctor> getDoctor() {
-        return doctor;
-    }
 
-    public void setDoctor(List<Doctor> doctor) {
-        this.doctor = doctor;
-    }
 }
