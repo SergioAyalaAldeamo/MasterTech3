@@ -20,7 +20,7 @@ public class SpecialtyController {
         return specialityService.getAll();
     }
 
-    @PostMapping("/all")
+    @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Specialty save(@RequestBody Specialty p){
         return specialityService.save(p);
