@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/Speciality")
+@RequestMapping("/api/Specialty")
 public class SpecialtyController {
 
     @Autowired
@@ -20,7 +20,7 @@ public class SpecialtyController {
         return specialityService.getAll();
     }
 
-    @PostMapping("/all")
+    @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Specialty save(@RequestBody Specialty p){
         return specialityService.save(p);
