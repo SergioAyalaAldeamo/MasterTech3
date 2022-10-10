@@ -73,7 +73,7 @@ public class Reservation implements Serializable {
     }
 
     public void setStatus(String status) {
-        this.status = "created";
+        this.status = status;
     }
 
     public Integer getScore() {
