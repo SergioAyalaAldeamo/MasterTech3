@@ -36,24 +36,21 @@ public class ClientService {
         }
 
     }
-    /*public Client update(Client p) {
+    public Client update(Client p) {
         if (p.getIdClient() != null) {
             Optional<Client> q = clientRepository.getClient(p.getIdClient());
             if (q.isPresent()) {
                 if (p.getName() != null){
                     q.get().setName(p.getName());
                 }
-                if (p.getYear() != null){
-                    q.get().setYear(p.getYear());
+                if (p.getEmail() != null){
+                    q.get().setEmail(p.getEmail());
                 }
-                if (p.getDescription() != null){
-                    q.get().setDescription(p.getDescription());
+                if (p.getPassword() != null){
+                    q.get().setPassword(p.getPassword());
                 }
-                if (p.getSpecialty() != null){
-                    q.get().setSpecialty(p.getSpecialty());
-                }
-                if (p.getDepartment() != null){
-                    q.get().setDepartment(p.getDepartment());
+                if (p.getAge() != null){
+                    q.get().setAge(p.getAge());
                 }
                 clientRepository.save(q.get());
                 return q.get();
@@ -63,7 +60,7 @@ public class ClientService {
         }else{
             return p;
         }
-    }*/
+    }
 
     public boolean detele(int id){
         boolean flag=false;

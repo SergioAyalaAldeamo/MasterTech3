@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entities.Doctor;
+import com.example.demo.entities.Specialty;
 import com.example.demo.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,5 +25,17 @@ public class DoctorController {
     @ResponseStatus(HttpStatus.CREATED)
     public Doctor save(@RequestBody Doctor p){
         return doctorService.save(p);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Doctor update(@RequestBody Doctor p){
+        return doctorService.update(p);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public Boolean delete(@PathVariable("id") int p){
+        return doctorService.detele(p);
     }
 }
