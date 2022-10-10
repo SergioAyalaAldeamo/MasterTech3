@@ -6,6 +6,10 @@ import com.example.demo.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -74,6 +78,25 @@ public class ReservationService {
             flag=true;
         }
         return flag;
+    }
+
+    public List<Reservation> getReservationPeriod(String da, String db){
+        SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");
+        Date a= new Date();
+        Date b= new Date();
+
+        try{
+            a = parser.parse(da);
+            b = parser.parse(db);
+
+        }catch(ParseException e){
+            e.printStackTrace();
+        }
+        if (a.before(b)){
+            return reservationRepository.getReservationPeriod(a,b);
+        }else{
+            return new ArrayList<>();
+        }
     }
 
 }

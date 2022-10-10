@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entities.Doctor;
+import com.example.demo.entities.Reservation;
 import com.example.demo.entities.Specialty;
 import com.example.demo.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,4 +39,6 @@ public class DoctorController {
     public Boolean delete(@PathVariable("id") int p){
         return doctorService.detele(p);
     }
+
+
 }

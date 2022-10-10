@@ -6,6 +6,7 @@ import com.example.demo.repository.crudRepository.ReservationCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,4 +32,7 @@ public class ReservationRepository {
         return reservationCrudRepository.save(p);
     }
 
+    public List<Reservation> getReservationPeriod(Date a, Date b){
+        return reservationCrudRepository.findAllByStartDateAfterAndStartDateBefore(a,b);
+    }
 }

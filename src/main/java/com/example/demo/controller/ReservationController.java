@@ -25,4 +25,10 @@ public class ReservationController {
     public Reservation save(@RequestBody Reservation p){
         return reservationService.save(p);
     }
+
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getReservationsReportDates(
+            @PathVariable("dateOne") String dateOne, @PathVariable("dateTwo") String dateTwo){
+        return reservationService.getReservationPeriod(dateOne,dateTwo);
+    }
 }
