@@ -125,13 +125,9 @@ function borrarElemento(idElemento){
     let mydata={
         id:idElemento
     };
-    let dataToSend=JSON.stringify(mydata);
     $.ajax({
-        url:'http://144.22.175.119/api/Doctor/1',
+        url:'http://144.22.175.119/api/Doctor/'+idElemento,
         type:'DELETE',
-        data:dataToSend,
-        contentType:'application/JSON',
-        datatype: 'JSON',
         success:function(respuesta){
             $("#resultado").empty();
             traerInformacion();
