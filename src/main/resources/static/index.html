@@ -16,20 +16,30 @@
 <div class="container-fluid">
   <a class="navbar-brand"  aling="center">Medicina G27 - G12</a>
 </div>
-</nav>
-<div class="resultado" id="resultado"></div>
-<h1>Linda te amo!</h1>
-<img src="image/img.png">
-<button onclick="traerInformacion()">Consultar</button>
-<div>
-  <input type="number" id="id" placeholder="Id">
-  <input type="text" id="specialty" placeholder="Especialidad">
-  <input type="number" id="graduate_year" placeholder="año en que se graduó">
-  <input type="number" id="department_id" placeholder="id departamento">
-  <input type="text" id="name" placeholder="Nombre">
+<div class="body-ls">
+  </nav>
+
+
+  <div class="tablaGuardar" id="display1" style="display: block;" >
+    <input type="number" id="year" placeholder="Año">
+    <input type="text" id="description" placeholder="Descripción">
+    <input type="text" id="department" placeholder="Departamento">
+    <input type="text" id="name" placeholder="Nombre">
+    <div class="botones">
+      <button class="btn btn-secondary" onclick="guardarDatos()">Guardar</button>
+      <button class="btn btn-secondary" onclick="actualizar()">Actualizar</button>
+      <button class="btn btn-secondary" onclick="traerInformacion()">Consultar</button>
+    </div>
+
+  </div>
+  <div class="cuadroResultado" id="resultado1" style="display: none;">
+    <div class="resultado" id="resultado"></div>
+    <button class="btn btn-secondary" id="botonOcultar" onclick="ocultarTabla()" style="display: none;">Ocultar tabla</button>
+  </div>
+
+  </div>
 </div>
-<button onclick="guardarDatos()">Guardar</button>
-<button onclick="actualizar()">Actualizar</button>
+
 
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

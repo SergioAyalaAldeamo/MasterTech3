@@ -1,3 +1,70 @@
-.resultado{
+
+body{
+    background: dodgerblue;
+    margin:0
+}
+
+
+.tablaGuardar {
+    width:400px;
+    height:440px;
+    background:#e6e6e6;
+    border-radius:8px;
+    box-shadow:0 0 40px -10px #000;
+    margin:calc(50vh - 220px) auto;
+    padding:20px 30px;
+    max-width:calc(100vw - 40px);
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+    position:relative
+}
+
+input{
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+    background:none;
+    outline:none;
+    resize:none;
+    border:0;
+    font-family:'Montserrat',sans-serif;
+    transition:all .3s;
+    border-bottom:2px solid #bebed2;
+    padding-top: 10%;
+}
+
+button:hover{
+    background: lightgray ;
+    color:#fff;
+    transition: all 0.25s;
+    transform: translateY(5px)
 
 }
+
+.botones{
+
+    display: inline;
+    margin: 20px;
+
+}
+.botones span{
+    margin-right: 10px;
+}
+
+.cuadroResultado{
+    background:#e6e6e6;
+    width:800px;
+    height:auto;
+    background:#e6e6e6;
+    border-radius:8px;
+    box-shadow:0 0 40px -10px #000;
+    margin:calc(50vh - 220px) auto;
+    padding:20px 30px;
+    max-width:calc(100vw - 40px);
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+    position:relative;
+    display: block;
+}
+
+
