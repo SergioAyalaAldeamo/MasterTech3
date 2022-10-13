@@ -87,9 +87,9 @@ function guardarDatos(){
 function actualizar(){
         let myData2={
             id:$("#id").val(),
-            specialty:$("#specialty").val(),
-            graduate_year:$("#graduate_year").val(),
-            department_id:$("#department_id").val(),
+            year: $("#year").val(),
+            description:$("#description").val(),
+            department:$("#department").val(),
             name:$("#name").val(),
         };
         console.log(myData2);
@@ -109,10 +109,10 @@ function actualizar(){
                 $("#department_id").val(""),
                 $("#name").val(""),
                 traerInformacion();
-                console.log(myData2);
+                console.log("si actualizo datos");
             },
             error: function(xhr,status){
-                alert("murio prro");
+                alert("no actualizo datos");
                 console.log(myData2);
             },
     
