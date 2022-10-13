@@ -53,7 +53,7 @@ function crearTabla(items){
 
 function guardarDatos(){
     let myData={
-        year: parseInt($("#year").val()),
+        year: $("#year").val(),
         description:$("#description").val(),
         department:$("#department").val(),
         name:$("#name").val(),
