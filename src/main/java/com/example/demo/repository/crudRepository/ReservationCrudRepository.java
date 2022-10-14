@@ -16,10 +16,10 @@ public interface ReservationCrudRepository extends CrudRepository<Reservation, I
     @Query("SELECT c.status, count (c.status) FROM Reservation AS c GROUP BY c order by COUNT (c) DESC ")
     public List<Object[]> countTotalReservationByStatus();
 
-    @Query("SELECT c.client, count (c.client) FROM Reservation AS c GROUP BY c order by COUNT (c) DESC ")
+    @Query("SELECT c.client, count (c.client) FROM Reservation AS c GROUP BY c.client order by COUNT (c) DESC ")
     public List<Object[]> countTotalReservationByClient();
 
-    public List<Reservation> findAllByIdReservationBetweenAnd(Integer a, Integer b);
+    //public List<Reservation> findAllByIdReservationBetweenAnd(Integer a, Integer b);
 
     public List<Reservation> findAllByStatus(String status);
 }

@@ -3,11 +3,11 @@ package com.example.demo.controller.DTO;
 public class countStatus {
 
     private Long completed;
-    private Long cancel;
+    private Long cancelled;
 
-    public countStatus(Long completed, Long cancel) {
+    public countStatus(Long completed, Long cancelled) {
         this.completed = completed;
-        this.cancel = cancel;
+        this.cancelled = cancelled;
     }
 
     public Long getCompleted() {
@@ -18,11 +18,11 @@ public class countStatus {
         this.completed = completed;
     }
 
-    public Long getCancel() {
-        return cancel;
+    public Long getCancelled() {
+        return cancelled;
     }
 
-    public void setCancel(Long cancel) {
-        this.cancel = cancel;
+    public void setCancelled(Long cancelled) {
+        this.cancelled = cancelled;
     }
 }

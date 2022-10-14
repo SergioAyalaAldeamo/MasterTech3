@@ -42,7 +42,6 @@ public class ReservationRepository {
     public List<CountClient> getTopClients(){
         List<CountClient> respuesta = new ArrayList<>();
         List<Object[]> reporte = reservationCrudRepository.countTotalReservationByClient();
-
         for(int i = 0; i<reporte.size();i++){
             respuesta.add(new CountClient((Long) reporte.get(i)[1],(Client) reporte.get(i)[0]));
         }
