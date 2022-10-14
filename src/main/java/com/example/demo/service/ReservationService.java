@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import com.example.demo.controller.DTO.CountClient;
+import com.example.demo.controller.DTO.countStatus;
 import com.example.demo.entities.Message;
 import com.example.demo.entities.Reservation;
 import com.example.demo.repository.ReservationRepository;
@@ -97,6 +99,17 @@ public class ReservationService {
         }else{
             return new ArrayList<>();
         }
+    }
+
+    public List<CountClient> gettopClient(){
+        return reservationRepository.getTopClients();
+    }
+
+    public countStatus getReservationsStatus(){
+        List<Reservation> completed = reservationRepository.getReservationByStatus("completed");
+        List<Reservation> cancelled = reservationRepository.getReservationByStatus("cancelled");
+
+        return new countStatus((long)completed.size(),(long)cancelled.size());
     }
 
 }

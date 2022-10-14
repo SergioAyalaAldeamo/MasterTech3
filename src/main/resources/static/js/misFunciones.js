@@ -45,6 +45,8 @@ function crearTabla(items){
     myTable+="<td>"+items[i].department+"</td>";
     myTable+="<td>"+items[i].name+"</td>";
     myTable+="<td><button class='btn btn-secondary' onclick='borrarElemento("+items[i].id+")'>Borrar</burron>";
+        myTable+="<td><button class='btn btn-secondary' onclick='borrarElemento("+items[i].id+")'>Actualizar</burron>";
+
     myTable+="</tr>";
     }
     myTable+="</table>";
@@ -101,7 +103,6 @@ function actualizar(){
             contentType:'application/JSON',
             datatype: 'JSON',
             success: function(respuesta){
-                alert("me vale prro");
                 $("#resultado").empty();
                 $("#id").val(""),
                 $("#specialty").val(""),
